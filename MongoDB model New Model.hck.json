@@ -1,0 +1,632 @@
+{
+  "modelName": "New Model",
+  "collections": [
+    {
+      "collectionName": "Tiendas",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "7e441fed-3d68-4e69-a7e4-1bbafc974f62",
+          "primaryKey": true,
+          "childRelationships": [
+            "51d7b6ac-460c-4b27-86d1-d763717b9ecb"
+          ],
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "4aa3caa6-0104-469d-8faf-88724c465bdb",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "dirección",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "document",
+          "properties": [
+            {
+              "name": "ubicacion",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "cb21c9e1-00af-44c7-9d8e-1af234745b65",
+              "required": true,
+              "error": {}
+            },
+            {
+              "name": "numero",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "339f72ac-804e-4e1e-a84f-db401c6a488c",
+              "required": true,
+              "error": {}
+            },
+            {
+              "name": "ciudad",
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "f619cece-f4d8-4ef4-8b52-03f101ad13fe",
+              "required": true,
+              "error": {}
+            }
+          ],
+          "additionalProperties": false,
+          "primaryKey": false,
+          "GUID": "85f1bfae-fc8a-4dfb-9b38-bd4ba35d7c23",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "telefonos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "string",
+              "GUID": "c73d6721-6842-4e70-971f-5695c04fdadb",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "88f675fc-698d-4aee-9475-89218761ae01",
+          "required": true,
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "f99d6c23-f494-44c0-9109-c73db44514cf"
+      },
+      "isActivated": true,
+      "additionalProperties": true,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "f8c6d882-5641-4596-a888-cdb058af9d12",
+      "bucketId": "a594e0df-3f8a-42ef-97d0-37c5e8aea49d",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "Sedes",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "805ed41b-02ec-4d2d-8dca-2b94c9212566",
+          "primaryKey": true,
+          "childRelationships": [
+            "ffd51091-8e1d-4f2e-82f9-f92bc79c9200"
+          ],
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "e558eb73-49a2-491f-96ab-753d3cac4b15",
+          "foreignCollection": "",
+          "foreignField": [],
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "vehiculos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "marca",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "6f5fde0e-88d7-489f-90a1-158cb44a1fd2",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "900da3aa-c3db-4470-a5b9-847e420d3c82",
+                  "name": "modelo",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "matricula",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "8d55fec7-c98a-4a29-8d2a-1c043c28af0a",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "estado",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "2c57ccfb-2dd0-4e54-88cb-d4bfc79a4571",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "c77f1712-2f02-4e73-b331-fab67db4a297",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "4f3d14b9-4650-4c5a-809a-8bfd2963b548",
+          "uniqueItems": false,
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "tiendaId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "1a9aa7bb-f636-4a87-a927-93443cbec268",
+          "relationshipType": "Foreign Key",
+          "foreignCollection": "f8c6d882-5641-4596-a888-cdb058af9d12",
+          "foreignField": [
+            "f8c6d882-5641-4596-a888-cdb058af9d12",
+            "7e441fed-3d68-4e69-a7e4-1bbafc974f62"
+          ],
+          "parentRelationship": "51d7b6ac-460c-4b27-86d1-d763717b9ecb",
+          "required": true,
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "de910bc6-7f00-45c4-8fc6-94ebf80b87c7"
+      },
+      "isActivated": true,
+      "additionalProperties": true,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "f5903d60-557d-4fa4-869e-89987e7b215d",
+      "bucketId": "a594e0df-3f8a-42ef-97d0-37c5e8aea49d",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "Empleados",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "fc112bb0-c4ac-462a-8b75-8f5a8df4db52",
+          "primaryKey": true,
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "faffaebc-378c-4758-bb45-f77a555e5b6a",
+          "foreignCollection": "",
+          "foreignField": [],
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "sexo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "f8728a8a-7c5b-492a-b230-6a896f325b1d",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "vinculadores",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "fecha",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "date",
+                  "primaryKey": false,
+                  "GUID": "acb53c9e-f9f1-444b-9997-755c75a96fe2",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "sedeId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "4d078195-65d1-4bf6-8b3e-5843a3f95f88",
+                  "parentRelationship": "ffd51091-8e1d-4f2e-82f9-f92bc79c9200",
+                  "relationshipType": "Foreign Key",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "sedeNombre",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "c085f9ec-18ec-423c-83e6-59f330a902a4",
+                  "foreignCollection": "",
+                  "foreignField": [],
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "estado",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "a13ccb7b-0bd9-42e7-bd09-fb3e352427d0",
+                  "foreignCollection": "",
+                  "foreignField": [],
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "4cdb7960-1943-43c1-a21d-2e4b94ffce38",
+              "arrayItem": true,
+              "foreignCollection": "",
+              "foreignField": []
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "bb62b8cd-274e-4af7-98b3-e3b9bbdf251d",
+          "foreignCollection": "",
+          "foreignField": [],
+          "uniqueItems": false,
+          "required": true,
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "b7e0c23f-71a5-4a45-af3e-94f1f1974f36"
+      },
+      "isActivated": true,
+      "additionalProperties": true,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "fba1a601-1ea0-453f-addd-226d0fb9dc06",
+      "bucketId": "a594e0df-3f8a-42ef-97d0-37c5e8aea49d",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    }
+  ],
+  "buckets": [
+    {
+      "name": "Modulo3Ejemplo1",
+      "type": "bucket",
+      "collectionIds": [
+        "f8c6d882-5641-4596-a888-cdb058af9d12",
+        "f5903d60-557d-4fa4-869e-89987e7b215d",
+        "fba1a601-1ea0-453f-addd-226d0fb9dc06"
+      ],
+      "backgroundColor": {
+        "r": 129,
+        "g": 212,
+        "b": 250,
+        "a": 1
+      },
+      "show": true,
+      "isActivated": true,
+      "GUID": "a594e0df-3f8a-42ef-97d0-37c5e8aea49d",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    }
+  ],
+  "views": [],
+  "relationships": [
+    {
+      "name": "fk_Sedes__id_to_Empleados_vinculadores.[0].sedeId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "f5903d60-557d-4fa4-869e-89987e7b215d",
+          "805ed41b-02ec-4d2d-8dca-2b94c9212566"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "fba1a601-1ea0-453f-addd-226d0fb9dc06",
+          "bb62b8cd-274e-4af7-98b3-e3b9bbdf251d",
+          "4cdb7960-1943-43c1-a21d-2e4b94ffce38",
+          "4d078195-65d1-4bf6-8b3e-5843a3f95f88"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "parentCollection": "f5903d60-557d-4fa4-869e-89987e7b215d",
+      "childCollection": "fba1a601-1ea0-453f-addd-226d0fb9dc06",
+      "GUID": "ffd51091-8e1d-4f2e-82f9-f92bc79c9200",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
+      "hackoladeStyles": {
+        "GUID": "1187454e-9ea1-4816-a576-4507d1103c17",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 1507,
+            "y": 1610.5
+          },
+          {
+            "x": 1741.5714285714287,
+            "y": 1610.5
+          },
+          {
+            "x": 1741.5714285714287,
+            "y": 1505
+          }
+        ],
+        "sides": [
+          "right",
+          "bottom"
+        ]
+      }
+    },
+    {
+      "name": "fk_Tiendas__id_to_Sedes_tiendaId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "f8c6d882-5641-4596-a888-cdb058af9d12",
+          "7e441fed-3d68-4e69-a7e4-1bbafc974f62"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "f5903d60-557d-4fa4-869e-89987e7b215d",
+          "1a9aa7bb-f636-4a87-a927-93443cbec268"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "parentCollection": "f8c6d882-5641-4596-a888-cdb058af9d12",
+      "childCollection": "f5903d60-557d-4fa4-869e-89987e7b215d",
+      "GUID": "51d7b6ac-460c-4b27-86d1-d763717b9ecb",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
+      "hackoladeStyles": {
+        "GUID": "79720f59-4010-4a32-a4be-7484065502d9",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 1590,
+            "y": 1378
+          },
+          {
+            "x": 1457,
+            "y": 1378
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      }
+    }
+  ],
+  "users": [],
+  "diagramViews": [],
+  "idToNameHashTable": {
+    "a594e0df-3f8a-42ef-97d0-37c5e8aea49d": "Modulo3Ejemplo1",
+    "f8c6d882-5641-4596-a888-cdb058af9d12": "Tiendas",
+    "7e441fed-3d68-4e69-a7e4-1bbafc974f62": "_id",
+    "4aa3caa6-0104-469d-8faf-88724c465bdb": "nombre",
+    "85f1bfae-fc8a-4dfb-9b38-bd4ba35d7c23": "dirección",
+    "cb21c9e1-00af-44c7-9d8e-1af234745b65": "ubicacion",
+    "339f72ac-804e-4e1e-a84f-db401c6a488c": "numero",
+    "f619cece-f4d8-4ef4-8b52-03f101ad13fe": "ciudad",
+    "88f675fc-698d-4aee-9475-89218761ae01": "telefonos",
+    "805ed41b-02ec-4d2d-8dca-2b94c9212566": "_id",
+    "e558eb73-49a2-491f-96ab-753d3cac4b15": "nombre",
+    "f5903d60-557d-4fa4-869e-89987e7b215d": "Sedes",
+    "4f3d14b9-4650-4c5a-809a-8bfd2963b548": "vehiculos",
+    "6f5fde0e-88d7-489f-90a1-158cb44a1fd2": "marca",
+    "900da3aa-c3db-4470-a5b9-847e420d3c82": "modelo",
+    "8d55fec7-c98a-4a29-8d2a-1c043c28af0a": "matricula",
+    "2c57ccfb-2dd0-4e54-88cb-d4bfc79a4571": "estado",
+    "1a9aa7bb-f636-4a87-a927-93443cbec268": "tiendaId",
+    "fc112bb0-c4ac-462a-8b75-8f5a8df4db52": "_id",
+    "faffaebc-378c-4758-bb45-f77a555e5b6a": "nombre",
+    "bb62b8cd-274e-4af7-98b3-e3b9bbdf251d": "vinculadores",
+    "acb53c9e-f9f1-444b-9997-755c75a96fe2": "fecha",
+    "4d078195-65d1-4bf6-8b3e-5843a3f95f88": "sedeId",
+    "c085f9ec-18ec-423c-83e6-59f330a902a4": "sedeNombre",
+    "a13ccb7b-0bd9-42e7-bd09-fb3e352427d0": "estado",
+    "fba1a601-1ea0-453f-addd-226d0fb9dc06": "Empleados",
+    "f8728a8a-7c5b-492a-b230-6a896f325b1d": "sexo",
+    "ffd51091-8e1d-4f2e-82f9-f92bc79c9200": "fk_Sedes__id_to_Empleados_vinculadores.[0].sedeId",
+    "51d7b6ac-460c-4b27-86d1-d763717b9ecb": "fk_Tiendas__id_to_Sedes_tiendaId"
+  },
+  "definitions": {
+    "type": "definitions",
+    "properties": [],
+    "GUID": "731b9093-a6fa-467c-b7cf-dec4d76f7916"
+  },
+  "polyglotDefinitions": {
+    "type": "polyglotDefinitions",
+    "properties": [],
+    "GUID": "3e654283-310e-49e9-8cef-dcbabebb3609"
+  },
+  "externalDefinitions": {
+    "type": "externalDefinitions",
+    "properties": [],
+    "GUID": "3c4211c1-e627-4b5f-a162-48c2f94b033b"
+  },
+  "sources": [],
+  "decorativeSymbols": [],
+  "dbVersion": "v7.x",
+  "dbVendor": "MongoDB",
+  "appTarget": "MONGODB",
+  "creationTS": "2026-04-27T23:41:17.579Z",
+  "GUID": "7d289566-c465-4266-99ef-7480c6c462fd",
+  "isLineageEnabled": false,
+  "lastModifTS": "2026-04-28T00:02:24.217Z",
+  "persistenceSchemaVersion": "8",
+  "isCreatedByPlugin": true,
+  "pluginInformation": {
+    "pluginEngineVersion": "1.0.0"
+  },
+  "applicationInformation": {
+    "version": "8.10.4"
+  },
+  "settings": {
+    "centralPane": {
+      "dbLevel": {
+        "erd": [
+          {
+            "GUID": "f8c6d882-5641-4596-a888-cdb058af9d12",
+            "x": 1235,
+            "y": 1273,
+            "width": 222,
+            "height": 176,
+            "color": {}
+          },
+          {
+            "GUID": "f5903d60-557d-4fa4-869e-89987e7b215d",
+            "x": 1590,
+            "y": 1311,
+            "width": 241,
+            "height": 194,
+            "color": {}
+          },
+          {
+            "GUID": "fba1a601-1ea0-453f-addd-226d0fb9dc06",
+            "x": 1243,
+            "y": 1513,
+            "width": 264,
+            "height": 195,
+            "color": {}
+          }
+        ],
+        "erdDefinitions": {
+          "erd": [],
+          "rootPath": [],
+          "entities": [],
+          "decorativeSymbols": []
+        },
+        "buckets": [
+          {
+            "x": 1171,
+            "y": 1209,
+            "GUID": "a594e0df-3f8a-42ef-97d0-37c5e8aea49d"
+          }
+        ],
+        "collapsedNodes": [],
+        "activeRelationship": "",
+        "activeRelationshipFields": {
+          "childField": [],
+          "parentField": []
+        },
+        "selectedCollections": [],
+        "displayColorPicker": false,
+        "graphView": {
+          "erd": [],
+          "buckets": [],
+          "decorativeSymbols": [],
+          "forceLayout": true,
+          "defaultLinkLength": 300,
+          "options": []
+        },
+        "diagramViews": [],
+        "decorativeSymbols": [],
+        "nestedCollectionsLayout": "horizontal",
+        "options": [
+          {
+            "GUID": "f5903d60-557d-4fa4-869e-89987e7b215d"
+          },
+          {
+            "GUID": "fba1a601-1ea0-453f-addd-226d0fb9dc06"
+          }
+        ],
+        "relationshipUpdateDisabled": false
+      },
+      "collectionLevel": {},
+      "changed": false
+    },
+    "dtDiagram": {
+      "collapsedNodes": [],
+      "shouldDistributeCollections": false
+    }
+  }
+}
