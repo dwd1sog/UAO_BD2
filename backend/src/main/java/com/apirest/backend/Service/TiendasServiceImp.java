@@ -13,7 +13,10 @@ import com.apirest.backend.Repository.ITiendasRepository;
 
 @Service
 public class TiendasServiceImp implements ITiendasService {
-    @Autowired ITiendasRepository tiendasRepository;
+    
+    @Autowired 
+    ITiendasRepository tiendasRepository;
+    
     @Override
     public String GuardarTienda(TiendasModel tienda) {
         tiendasRepository.save(tienda);
@@ -25,7 +28,6 @@ public class TiendasServiceImp implements ITiendasService {
         return tiendasRepository.findAll();
     }
 
-    // helper: no @Override porque la interfaz declara buscarTiendasPorId (plural) con otro retorno
     @Override
     public TiendasModel buscarTiendaPorId(ObjectId id) {
         return tiendasRepository.findById(id)
@@ -33,17 +35,11 @@ public class TiendasServiceImp implements ITiendasService {
     }
 
     @Override
-    public List<TiendaDTO> buscarTiendasPorId(ObjectId id) {
-        // TODO: mapear TiendasModel a TiendaDTO o usar un método del repo que devuelva DTOs
-        return java.util.Collections.emptyList();
-    }
-
-    @Override
     public TiendasModel actualizarTienda(ObjectId id, TiendasModel tienda) {
         TiendasModel tiendaExistente = buscarTiendaPorId(id);
-            tiendaExistente.setNombre(tienda.getNombre());
-            tiendaExistente.setDireccion(tienda.getDireccion());
-            tiendaExistente.setTelefonos(tienda.getTelefonos());
+        tiendaExistente.setNombre(tienda.getNombre());
+        tiendaExistente.setDireccion(tienda.getDireccion());
+        tiendaExistente.setTelefonos(tienda.getTelefonos());
         return tiendasRepository.save(tiendaExistente);
     }
 
