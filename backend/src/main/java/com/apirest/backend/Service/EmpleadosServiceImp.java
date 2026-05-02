@@ -17,7 +17,7 @@ public class EmpleadosServiceImp implements IEmpleadosService {
     IEmpleadosRepository empleadosRepository;
 
     @Override
-    public String guardarEmpleado(EmpleadosModel empleado) {
+    public String insertarEmpleado(EmpleadosModel empleado) {
         empleadosRepository.save(empleado);
         return "El empleado " + empleado.getNombre() + " fue creado con éxito";
     }
@@ -37,7 +37,6 @@ public class EmpleadosServiceImp implements IEmpleadosService {
     public EmpleadosModel actualizarEmpleado(ObjectId id, EmpleadosModel empleado) {
         EmpleadosModel empleadoExistente = buscarEmpleadoPorId(id);
         
-        // Actualizamos los datos
         empleadoExistente.setNombre(empleado.getNombre());
         empleadoExistente.setSexo(empleado.getSexo());
         empleadoExistente.setVinculadores(empleado.getVinculadores());
@@ -50,5 +49,10 @@ public class EmpleadosServiceImp implements IEmpleadosService {
         EmpleadosModel empleadoExistente = buscarEmpleadoPorId(id);
         empleadosRepository.delete(empleadoExistente);
         return "El empleado con ID " + id + " fue eliminado correctamente";
+    }
+
+    @Override
+    public List<EmpleadosModel> buscarEmpleadosPorSede(ObjectId sedeId) {
+        return empleadosRepository.buscarEmpleadosPorSede(sedeId);
     }
 }
