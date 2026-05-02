@@ -17,7 +17,7 @@ public class SedesServiceImp implements ISedesService {
     ISedesRepository sedesRepository;
 
     @Override
-    public String GuardarSede(SedesModel sede) {
+    public String CrearSede(SedesModel sede) {
         sedesRepository.save(sede);
         return "La sede " + sede.getNombre() + " fue creada con éxito";
     }
@@ -36,11 +36,9 @@ public class SedesServiceImp implements ISedesService {
     @Override
     public SedesModel actualizarSede(ObjectId id, SedesModel sede) {
         SedesModel sedeExistente = buscarSedePorId(id);
-        // Actualizamos los datos
         sedeExistente.setNombre(sede.getNombre());
         sedeExistente.setVehiculos(sede.getVehiculos());
         sedeExistente.setTiendaId(sede.getTiendaId());
-        
         return sedesRepository.save(sedeExistente);
     }
 
@@ -49,5 +47,10 @@ public class SedesServiceImp implements ISedesService {
         SedesModel sedeExistente = buscarSedePorId(id);
         sedesRepository.delete(sedeExistente);
         return "La sede con ID " + id + " fue eliminada correctamente";
+    }
+
+    @Override
+    public List<SedesModel> buscarSedePorTiendaId(ObjectId tiendaId) {
+        return sedesRepository.findByTiendaId(tiendaId);
     }
 }
